@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="stylesheet" href="../css/style.min.css">
+    <title>Purchase - ToqueChef</title>
+</head>
+
+<body>
+    <nav>
+        <img id="logo" src="../images/logo.png" alt="Logo Toque Chef">
+
+        <ul id="menu">
+            <li><a href="index.html" class="onglets">Homepage</a></li>
+            <li><a href="apercu.html" class="onglets">Overview</a></li>
+            <li><a href="achat.html" class="onglets">Purchase</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <header>
+            <div>
+                <h1>TOQUE CHEF</h1>
+                <p>From 7 years old</p>
+                <p><span id="prix">15 € </span>-<span id="stock"> In stock</span></p>
+                <a href="panier.html" id="bouton">Purchase the physical game</a>    
+            </div>
+            <div id="packaging"></div>
+        </header>
+    </main>
+    <footer>
+        <form id="newsletter" action="#" method="POST">
+            <label for="email">Subscribe to our newsletter :</label>
+            <input id="name" name="subscriber_name" type="text" placeholder="Name" required>
+            <input id="email" name="subscriber_email" type="email" placeholder="Email" required>
+            <button type="submit">Send</button>
+        </form>
+
+        <ul id="mentions">
+            <li><a href="mentions.html#cgu">General conditions of use</a></li>
+            <li><a href="mentions.html#cgv">General conditions of sale</a></li>
+            <li><a href="mentions.html#rgpd">GDPR</a></li>
+            <li><a href="https://www.instagram.com/toquechef.lejeu" target="_blank">Instagram</a></li>
+            <li><a href="https://mmi19g14.mmi-troyes.fr/piorra" target="_blank">© 2021 - Agence Piorra</a></li>
+        </ul>
+    </footer>
+    
+    <script type="module">
+        import * as THREE from '../node_modules/three/build/three.module.js';
+        import { GLTFLoader } from '../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+        import { OrbitControls } from '../node_modules/three/examples/jsm/controls/OrbitControls.js';
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera( 10, 1, 1, 10 );
+        camera.position.z = 1;
+        camera.position.y = 1;
+        camera.position.x = 1;
+
+        /*const light = new THREE.PointLight( 0xffffff, 2, 100 );
+        light.position.set( 4, 3, 2 );
+        scene.add( light );
+
+        const light = new THREE.AmbientLight( 0xffffff );
+        scene.add( light );*/
+
+        const light = new THREE.HemisphereLight( 0xffffff, 0x555555, 1.5 );
+        scene.add( light );
+
+
+        const renderer = new THREE.WebGLRenderer({
+            antialias: true,
+            alpha: true
+        });
+        renderer.setSize( 400, 400 );
+        document.getElementById('packaging').appendChild( renderer.domElement );
+
+        //bouger l'objet avec le curseur
+        const controls = new OrbitControls( camera, renderer.domElement );
+			controls.target.set( 0, 0.5, 0 );
+			controls.update();
+			controls.enablePan = false;
+			controls.enableDamping = true;
+
+
+        const loader = new GLTFLoader();
+
+        loader.load( '../packaging_gltf_v4/packagint.gltf', function ( gltf ) {
+        scene.add( gltf.scene );
+        });
+        
+        
+        function animate() {
+	        requestAnimationFrame( animate );
+			
+            scene.position.y = 0.5;
+            scene.rotation.y += 0.01;
+
+	        renderer.render( scene, camera );
+        }
+        animate();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
+@font-face { font-family: "fredoka"; src: url("../typos/FredokaOne-Regular.ttf"); }
+
+/*@font-face {
+  font-family: "lato";
+  src: url("../typos/Lato-Regular.ttf");
+}*/
+nav, main, main header, main section .carte, main section #patissiers, main section #bas, main section #actions, main section #actions .groupcard, main section #actions .groupcard div, main section #patisseries, main section #patisseries #choix p, main section #patisseries #choix div, main section #patisseries #cartespat, footer, footer ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+* { scroll-behavior: smooth; }
+
+@-webkit-keyframes coucou { 0% { opacity: 0; }
+  100% { opacity: 1; } }
+
+@keyframes coucou { 0% { opacity: 0; }
+  100% { opacity: 1; } }
+
+body { font-family: "Ubuntu", sans-serif; padding: 0; margin: 0; overflow-x: hidden; }
+
+#packaging { width: 50vw; height: 30vh; }
+
+.miam { position: absolute; width: 10vh; }
+
+#chou { top: 80vh; left: 0; }
+
+#donut { top: 191vh; right: 0; }
+
+#reli { bottom: 0vh; left: 0; }
+
+p { color: #54554e; }
+
+a, main form #recap button { text-decoration: none; }
+
+ul { padding: 0; margin: 0; }
+
+li { list-style: none; }
+
+h1 { color: #da1b19; font-family: "fredoka", sans-serif; }
+
+h2 { color: #ff075d; font-family: "fredoka", sans-serif; }
+
+nav { height: 10vh; font-weight: 500; }
+
+nav #logo { width: 5%; }
+
+nav #menu { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 50%; }
+
+nav #menu li a, nav #menu li main form #recap button, main form #recap nav #menu li button { color: #da1b19; padding: 10px; margin: 0 10px 0 10px; font-size: 110%; }
+
+nav #menu li a:hover, nav #menu li main form #recap button:hover, main form #recap nav #menu li button:hover { border-bottom: 2px solid #da1b19; }
+
+main { padding: 0 0 3% 0; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; position: relative; }
+
+main header { width: 80vw; height: 90vh; }
+
+main header canvas { cursor: -webkit-grab; cursor: grab; width: 100%; height: 100%; display: block; }
+
+main header div { width: 50%; }
+
+main header div p { padding-bottom: 10%; }
+
+main header div a, main header div form #recap button, main form #recap header div button { padding: 2%; background-color: #f77200; color: white; }
+
+main header div a:hover, main header div form #recap button:hover, main form #recap header div button:hover { border: 2px solid #f77200; background-color: white; color: #f77200; }
+
+main header div #prix { color: #da1b19; }
+
+main header div #stock { color: green; }
+
+main header img, main header #packaging { width: 30%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+main video { height: 100vh; width: 100%; }
+
+main section { width: 80vw; padding: 1%; position: relative; }
+
+main section p { padding-left: 5%; }
+
+main section #tableau { padding-left: 5%; display: -ms-grid; display: grid; -ms-grid-columns: 1fr 1fr 1fr; grid-template-columns: 1fr 1fr 1fr; }
+
+main section #tableau p { padding: 10px; border: 2px solid #ff075d; margin: 0; text-align: center; cursor: none; }
+
+main section #tableau p:hover { background-color: #ff075d; color: white; }
+
+main section #cartes { display: -ms-grid; display: grid; -ms-grid-columns: 1fr 1fr 1fr; grid-template-columns: 1fr 1fr 1fr; justify-items: center; }
+
+main section .carte { position: relative; width: 200px; height: 250px; padding: 20px; border-radius: 20px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -ms-border-radius: 20px; -o-border-radius: 20px; transition: 0.5s; -webkit-transition: 0.5s; -moz-transition: 0.5s; -ms-transition: 0.5s; -o-transition: 0.5s; -webkit-transform-style: preserve-3d; transform-style: preserve-3d; }
+
+main section .carte:hover { transform: rotateY(180deg); -webkit-transform: rotateY(180deg); -moz-transform: rotateY(180deg); -ms-transform: rotateY(180deg); -o-transform: rotateY(180deg); transition: 0.5s; -webkit-transition: 0.5s; -moz-transition: 0.5s; -ms-transition: 0.5s; -o-transition: 0.5s; }
+
+main section .carte .carte-front { z-index: 1; position: absolute; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+
+main section .carte .carte-back { z-index: 2; position: absolute; transform: rotateY(180deg); -webkit-transform: rotateY(180deg); -moz-transform: rotateY(180deg); -ms-transform: rotateY(180deg); -o-transform: rotateY(180deg); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+
+main section .carte img { width: 141px; height: 200px; }
+
+main section #plateau { width: 80vw; height: 40vw; margin: 40px 5%; border: 2px solid grey; }
+
+main section #patissiers { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; position: relative; width: 100%; height: 20%; }
+
+main section #patissiers img { height: 90%; margin: 0 1%; }
+
+main section #patissiers .jetons { position: absolute; width: 4vw; height: 3vw; }
+
+main section #patissiers #jeton1 { left: 20%; top: 0; }
+
+main section #patissiers #jeton2 { left: 29%; bottom: 0; }
+
+main section #patissiers #jeton3 { left: 38%; top: 0; }
+
+main section #patissiers #jeton5 { right: 38%; bottom: 0; }
+
+main section #patissiers #jeton6 { right: 29%; }
+
+main section #patissiers #jeton7 { right: 20%; top: 0; }
+
+main section #bas { width: 100%; height: 80%; }
+
+main section #actions { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; width: 20%; height: 100%; }
+
+main section #actions #pioche { height: 30%; }
+
+main section #actions .groupcard { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; width: 100%; height: 30%; }
+
+main section #actions .groupcard div { width: 100%; height: 40%; }
+
+main section #actions .groupcard div img { height: 100%; }
+
+main section .tourner { transform: rotateX(180deg); -webkit-transform: rotateX(180deg); -moz-transform: rotateX(180deg); -ms-transform: rotateX(180deg); -o-transform: rotateX(180deg); }
+
+main section #patisseries { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; width: 80%; height: 100%; }
+
+main section #patisseries #choix { width: 77%; height: 40%; border: 2px solid grey; }
+
+main section #patisseries #choix p { height: 30%; margin: 0; padding: 0; border-bottom: 2px solid grey; }
+
+main section #patisseries #choix div { height: 70%; }
+
+main section #patisseries #choix div img { height: 80%; }
+
+main section #patisseries #cartespat { width: 80%; height: 50%; }
+
+main section #patisseries #cartespat img { height: 80%; }
+
+main form { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; width: 80vw; }
+
+main form .coor { display: -ms-grid; display: grid; -ms-grid-columns: 1fr 1fr; grid-template-columns: 1fr 1fr; grid-gap: 40px; margin-bottom: 10%; }
+
+main form .coor div { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+
+main form .coor div label { padding-bottom: 10px; }
+
+main form .coor div input { padding: 10px; width: 20vw; }
+
+main form .coor div input:focus { outline: 2px solid #54554e; }
+
+main form #recap { width: 40vw; margin-bottom: 10%; }
+
+main form #recap span { color: #da1b19; }
+
+main form #recap button { border: none; }
+
+main form #recap div { display: -ms-grid; display: grid; -ms-grid-columns: 1fr 1fr; grid-template-columns: 1fr 1fr; grid-gap: 20px 40px; height: 25vh; }
+
+main form #recap div button { font-size: 16px; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+main form #recap div a, main form #recap div button { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+main form #recap div #cb { width: 100%; }
+
+main form a, main form #recap button { padding: 1%; background-color: #f77200; color: white; }
+
+main form a:hover, main form #recap button:hover { border: 2px solid #f77200; background-color: white; color: #f77200; }
+
+main form a img, main form #recap button img { width: 44px; padding-left: 5px; }
+
+footer { background-color: #f77200; color: white; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; height: 20vh; font-weight: 500; }
+
+footer form { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 80vw; }
+
+footer form input { border: none; margin: 1%; padding: 5px; }
+
+footer form input:focus { outline: 2px solid #54554e; }
+
+footer form button { border: none; background-color: white; }
+
+footer form button:hover { background-color: #f77200; color: white; border: 2px solid white; }
+
+footer ul { width: 80vw; }
+
+footer ul li a, footer ul li main form #recap button, main form #recap footer ul li button { color: white; padding: 10px; }
+
+footer ul li a:hover, footer ul li main form #recap button:hover, main form #recap footer ul li button:hover { border-bottom: 2px solid white; }
+
+@media screen and (max-width: 960px) { #titre { padding-left: 10vw; }
+  .miam { display: none; }
+  nav { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+  nav #logo { display: none; }
+  nav #menu { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 100%; }
+  main { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+  main header { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+  main header div { width: 100%; }
+  main header img, main header #packaging { display: none; }
+  main video { background-color: black; height: 100vh; }
+  main section #cartes { display: -ms-grid; display: grid; -ms-grid-columns: 1fr; grid-template-columns: 1fr; justify-items: center; }
+  main section .carte { width: 150px; height: 200px; }
+  main section .carte img { height: 200px; }
+  main form button { padding: 2%; background-color: #f77200; color: white; border: none; }
+  main form .coor { display: -ms-grid; display: grid; -ms-grid-columns: 1fr; grid-template-columns: 1fr; grid-gap: 20px; }
+  main form .coor div input { width: 50vw; }
+  main form #recap div { display: -ms-grid; display: grid; -ms-grid-columns: 1fr; grid-template-columns: 1fr; grid-gap: 10px 20px; height: 10vh; }
+  main form #recap div button { height: 5vh; }
+  main form #recap div a, main form #recap div button { height: 5vh; }
+  main form #recap div #cb { display: none; }
+  footer { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: -webkit-max-content; height: -moz-max-content; height: max-content; }
+  footer form { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+  footer ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+  footer ul li { padding: 5px; } }
+/*# sourceMappingURL=style.min.css.map */

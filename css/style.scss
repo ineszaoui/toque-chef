@@ -1,0 +1,569 @@
+@import "typos";
+@import "colors";
+@import "placeholders";
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
+
+* {
+  scroll-behavior: smooth;
+}
+
+@keyframes coucou {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+#packaging {
+  width: 50vw;
+  height: 30vh;
+}
+
+//patisseries
+
+.miam {
+  position: absolute;
+  width: 10vh;
+}
+#chou {
+  top: 80vh;
+  left: 0;
+}
+#donut {
+  top: 191vh;
+  right: 0;
+}
+#reli {
+  bottom: 0vh;
+  left: 0;
+}
+
+p {
+  color: $gris;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+h1 {
+  color: $rouge;
+  font-family: "fredoka", sans-serif;
+}
+h2 {
+  color: $rose;
+  font-family: "fredoka", sans-serif;
+}
+nav {
+  @extend %flex;
+  height: 10vh;
+  font-weight: 500;
+  #logo {
+    width: 5%;
+  }
+  #menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    li {
+      a {
+        color: $rouge;
+        padding: 10px;
+        margin: 0 10px 0 10px;
+        font-size: 110%;
+        &:hover {
+          border-bottom: 2px solid $rouge;
+        }
+      }
+    }
+  }
+}
+main {
+  padding: 0 0 3% 0;
+  @extend %flex;
+  flex-direction: column;
+  position: relative;
+  header {
+    width: 80vw;
+    height: 90vh;
+    @extend %flex;
+    canvas {
+      cursor: grab;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    div {
+      width: 50%;
+      p {
+        padding-bottom: 10%;
+      }
+      a {
+        padding: 2%;
+        background-color: $orange;
+        color: white;
+        &:hover {
+          border: 2px solid $orange;
+          background-color: white;
+          color: $orange;
+        }
+      }
+      #prix {
+        color: $rouge;
+      }
+      #stock {
+        color: green;
+      }
+    }
+    img,
+    #packaging {
+      width: 30%;
+      display: flex;
+      align-items: center;
+    }
+  }
+  video {
+    height: 100vh;
+    width: 100%;
+  }
+  section {
+    width: 80vw;
+    padding: 1%;
+    position: relative;
+    p {
+      padding-left: 5%;
+    }
+    #tableau {
+      padding-left: 5%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      p {
+        padding: 10px;
+        border: 2px solid $rose;
+        margin: 0;
+        text-align: center;
+        cursor: none;
+        &:hover {
+          background-color: $rose;
+          color: white;
+        }
+      }
+    }
+    #cartes {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-items: center;
+    }
+    .carte {
+      @extend %flex;
+      position: relative;
+      width: 200px;
+      height: 250px;
+      padding: 20px;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+      transition: 0.5s;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -ms-transition: 0.5s;
+      -o-transition: 0.5s;
+      transform-style: preserve-3d;
+      &:hover {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+      }
+      .carte-front {
+        z-index: 1;
+        position: absolute;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+      }
+      .carte-back {
+        z-index: 2;
+        position: absolute;
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+      }
+      img {
+        width: 141px;
+        height: 200px;
+      }
+    }
+
+    //plateau
+
+    #plateau {
+      width: 80vw;
+      height: 40vw;
+      margin: 40px 5%;
+      border: 2px solid grey;
+    }
+    #patissiers {
+      @extend %flex;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      height: 20%;
+      img {
+        height: 90%;
+        margin: 0 1%;
+      }
+      .jetons {
+        position: absolute;
+        width: 4vw;
+        height: 3vw;
+      }
+      #jeton1 {
+        left: 20%;
+        top: 0;
+      }
+      #jeton2 {
+        left: 29%;
+        bottom: 0;
+      }
+      #jeton3 {
+        left: 38%;
+        top: 0;
+      }
+
+      #jeton5 {
+        right: 38%;
+        bottom: 0;
+      }
+      #jeton6 {
+        right: 29%;
+      }
+      #jeton7 {
+        right: 20%;
+        top: 0;
+      }
+    }
+    #bas {
+      @extend %flex;
+      width: 100%;
+      height: 80%;
+    }
+    #actions {
+      @extend %flex;
+      flex-direction: column;
+      width: 20%;
+      height: 100%;
+      #pioche {
+        height: 30%;
+      }
+      .groupcard {
+        @extend %flex;
+        flex-direction: column;
+        width: 100%;
+        height: 30%;
+        div {
+          @extend %flex;
+          width: 100%;
+          height: 40%;
+          img {
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .tourner {
+      transform: rotateX(180deg);
+      -webkit-transform: rotateX(180deg);
+      -moz-transform: rotateX(180deg);
+      -ms-transform: rotateX(180deg);
+      -o-transform: rotateX(180deg);
+    }
+    #patisseries {
+      @extend %flex;
+      flex-direction: column;
+      width: 80%;
+      height: 100%;
+      #choix {
+        width: 77%;
+        height: 40%;
+        border: 2px solid grey;
+        p {
+          @extend %flex;
+          height: 30%;
+          margin: 0;
+          padding: 0;
+          border-bottom: 2px solid grey;
+        }
+        div {
+          @extend %flex;
+          height: 70%;
+          img {
+            height: 80%;
+          }
+        }
+      }
+      #cartespat {
+        @extend %flex;
+        width: 80%;
+        height: 50%;
+        img {
+          height: 80%;
+        }
+      }
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80vw;
+    .coor {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 40px;
+      margin-bottom: 10%;
+      div {
+        display: flex;
+        flex-direction: column;
+        label {
+          padding-bottom: 10px;
+        }
+        input {
+          padding: 10px;
+          width: 20vw;
+          &:focus {
+            outline: 2px solid $gris;
+          }
+        }
+      }
+    }
+    #recap {
+      width: 40vw;
+      margin-bottom: 10%;
+      span {
+        color: $rouge;
+      }
+      button {
+        @extend a;
+        border: none;
+      }
+      div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px 40px;
+        height: 25vh;
+        button {
+          font-size: 16px;
+          justify-content: center;
+        }
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        #cb {
+          width: 100%;
+        }
+      }
+    }
+    a {
+      padding: 1%;
+      background-color: $orange;
+      color: white;
+      &:hover {
+        border: 2px solid $orange;
+        background-color: white;
+        color: $orange;
+      }
+      img {
+        width: 44px;
+        padding-left: 5px;
+      }
+    }
+  }
+}
+footer {
+  @extend %flex;
+  background-color: $orange;
+  color: white;
+  flex-direction: column;
+  height: 20vh;
+  font-weight: 500;
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    input {
+      border: none;
+      margin: 1%;
+      padding: 5px;
+      &:focus {
+        outline: 2px solid $gris;
+      }
+    }
+    button {
+      border: none;
+      background-color: white;
+      &:hover {
+        background-color: $orange;
+        color: white;
+        border: 2px solid white;
+      }
+    }
+  }
+  ul {
+    @extend %flex;
+    width: 80vw;
+    li {
+      a {
+        color: white;
+        padding: 10px;
+        &:hover {
+          border-bottom: 2px solid white;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  #titre {
+    padding-left: 10vw;
+  }
+  .miam {
+    display: none;
+  }
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    #logo {
+      display: none;
+    }
+    #menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    header {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      div {
+        width: 100%;
+      }
+      img,
+      #packaging {
+        display: none;
+      }
+    }
+    video {
+      background-color: black;
+      height: 100vh;
+    }
+    section {
+      #cartes {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+      .carte {
+        width: 150px;
+        height: 200px;
+        img {
+          height: 200px;
+        }
+      }
+    }
+    form {
+      button {
+        padding: 2%;
+        background-color: $orange;
+        color: white;
+        border: none;
+      }
+      .coor {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        div {
+          input {
+            width: 50vw;
+          }
+        }
+      }
+      #recap {
+        div {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-gap: 10px 20px;
+          height: 10vh;
+          button {
+            height: 5vh;
+          }
+          a {
+            height: 5vh;
+          }
+          #cb {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: max-content;
+    form {
+      flex-direction: column;
+    }
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
+      li {
+        padding: 5px;
+      }
+    }
+  }
+}

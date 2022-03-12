@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "three": "^0.126.1"
+  },
+  "dependencies": {
+    "gltf-webpack-loader": "^1.0.6"
+  }
+}

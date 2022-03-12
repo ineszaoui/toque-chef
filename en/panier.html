@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="stylesheet" href="../css/style.min.css">
+    <title>Purchase - ToqueChef</title>
+</head>
+
+<body>
+    <nav>
+        <img id="logo" src="../images/logo.png" alt="Logo Toque Chef">
+
+        <ul id="menu">
+            <li><a href="index.html" class="onglets">Homepage</a></li>
+            <li><a href="apercu.html" class="onglets">Overview</a></li>
+            <li><a href="achat.html" class="onglets">Purchase</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1 id="titre">PLACE AN ORDER</h1>   
+
+        <form action="#" method="POST">
+            <div class="coor">
+                <h2>Contact details</h2>
+                <div></div>
+                <div>
+                    <label for="prenom">First name :</label>
+                    <input id="prenom" name="prenom" type="text" required>
+                    
+                </div>
+                <div>
+                    <label for="nom">Last name :</label>
+                    <input id="nom" name="nom" type="text" required>
+                    
+                </div>
+                <div>
+                    <label for="adr">Postal address :</label>
+                    <input id="adr" name="adr" type="text" required>
+                    
+                </div>
+                <div>
+                    <label for="mail">Email address :</label>
+                    <input id="mail" name="email" type="email" required>
+                    
+                </div>
+                <div>
+                    <label for="tel">Phone :</label>
+                    <input id="tel" name="tel" type="tel" required>
+                
+                </div>
+            </div>
+            <div class="coor">
+                <h2>Payment</h2>
+                <div></div>
+                <div>
+                    <label for="titu">Holder :</label>
+                    <input id="titu" name="titu" type="text" required>
+                </div>
+                <div>
+                    <label for="nbc">Card number :</label>
+                    <input id="nbc" name="nbc" type="text" required>
+                </div>
+                <div>
+                    <label for="datex">Expiration date :</label>
+                    <input id="datex" name="datex" type="text" placeholder="MM/YY" maxlength="5" required>
+                </div>
+                <div>
+                    <label for="codesecu">Security code :</label>
+                    <input id="codesecu" name="codesecu" type="text" placeholder="CVV" maxlength="3" required>
+                </div>
+            </div>
+            <div id="recap">
+                <h2>Recap</h2>
+                <p>Articles : 15€</p>
+                <p>Delivery : 0€</p>
+                <p><span>Total Amount : 15€</span></p>
+                <div>
+                    <button type="submit">Purchase</button>
+                    <a href="https://www.paypal.com/fr/signin">Pay with <img src="../images/paypal.png" alt="logo paypal"></a>
+                    <img id="cb" src="../images/cb.png" alt="moyens de paiement">
+                </div>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <form id="newsletter" action="#" method="POST">
+            <label for="email">Subscribe to our newsletter :</label>
+            <input id="name" name="subscriber_name" type="text" placeholder="Name" required>
+            <input id="email" name="subscriber_email" type="email" placeholder="Email" required>
+            <button type="submit">Send</button>
+        </form>
+
+        <ul id="mentions">
+            <li><a href="mentions.html#cgu">General conditions of use</a></li>
+            <li><a href="mentions.html#cgv">General conditions of sale</a></li>
+            <li><a href="mentions.html#rgpd">GDPR</a></li>
+            <li><a href="https://www.instagram.com/toquechef.lejeu" target="_blank">Instagram</a></li>
+            <li><a href="https://mmi19g14.mmi-troyes.fr/piorra" target="_blank">© 2021 - Agence Piorra</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>
